@@ -86,8 +86,84 @@ body {
 
 .links {
   padding: 0.5em;
+  display: flex;
 }
 
 .links a {
   color: white;
+}
+
+.links a:not(:first-child) {
+  margin-left: 1.25ch;
+}
+
+#enter-card {
+  background: black;
+  color: white;
+  cursor: pointer;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 100;
+  margin: 0;
+  min-width: 100%;
+  min-height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.true-center {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#signBunny {
+  font-size: 24px;
+  font-family: monospace;
+}
+
+.signBunny {
+  background: rgba(0,0,0,0.7);
+  border: 1px solid blue;
+  padding: 0.5em;
+}
+
+.grid {
+  display: grid;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+}
+
+@media only screen and (max-width: 700px) {
+  .grid { 
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+.x-2 { grid-template-columns: repeat(2, 1fr); } 
+.x-3 { grid-template-columns: repeat(3, 1fr); } 
+.x-4 { grid-template-columns: repeat(4, 1fr); } 
+.x-5 { grid-template-columns: repeat(5, 1fr); } 
+.x-6 { grid-template-columns: repeat(6, 1fr); } 
+.x-7 { grid-template-columns: repeat(7, 1fr); } 
+.x-8 { grid-template-columns: repeat(8, 1fr); } 
+.x-9 { grid-template-columns: repeat(9, 1fr); } 
+.x-10 { grid-template-columns: repeat(10, 1fr); } 
+
+textarea {
+  font-size: 16px;
+  color: white;
+  border: 1px solid blue;
+  background: rgba(0,0,0,0.7);
+  padding: 0.5em;
+}
+
+#signText {
+  min-height: 100%;
+  min-width: 100%;
 }
