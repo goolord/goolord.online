@@ -6,17 +6,17 @@ function signBunny_ (strArr, cellLen) {
     return "| " + " ".repeat(lspace) + str + " ".repeat(rspace) + " |\n"
   })
   let bunLen = 8
-  let bunleft = ~~((cellLen - bunLen) / 2) -1
+  let bunleft = " ".repeat(~~((cellLen - bunLen) / 2) -1)
   if (cellLen < 11) {
-    return "no"
+    return "minimum bunny width is 11"
   } else { return `
 |${"‾".repeat(cellLen+2)}|
 |${" ".repeat(cellLen+2)}|
 ${lines.join("")}|${" ".repeat(cellLen+2)}|
 |${"_".repeat(cellLen+2)}|
-${" ".repeat(bunleft)}(\\__/)||
-${" ".repeat(bunleft)}(•ㅅ•)||
-${" ".repeat(bunleft)}/ 　 づ
+${bunleft}(\\__/)||
+${bunleft}(•ㅅ•)||
+${bunleft}/ 　 づ
   `}
 }
 
