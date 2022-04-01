@@ -44,7 +44,7 @@ function autoPlay() {
   }
 }
 
-function wordWrap (text, maxLen) { 
+function wordWrap (text, maxLen) {
   let wrapRegex = new RegExp(`(?![^\\n]{1,${maxLen}}$)([^\\n]{1,${maxLen}})\\s`, 'g')
   let lenRegex = new RegExp(`.{0,${maxLen}}`, 'g')
   return text.split(wrapRegex).flatMap(x => x.match(lenRegex)).filter(x => x !== "")
