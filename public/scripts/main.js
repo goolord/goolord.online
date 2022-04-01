@@ -3,21 +3,21 @@ function signBunny_ (strArr, cellLen) {
     let rem = cellLen - str.length
     let lspace = ~~(rem / 2)
     let rspace = cellLen - (lspace + str.length)
-    return "| " + " ".repeat(lspace) + str + " ".repeat(rspace) + " |\n"
+    return "│" + " ".repeat(lspace+1) + str + " ".repeat(rspace+1) + "│\n"
   })
   let bunLen = 8
   let bunleft = " ".repeat(~~((cellLen - bunLen) / 2) -1)
   if (cellLen < 11) {
     return "minimum bunny width is 11"
   } else { return `
-|${"‾".repeat(cellLen+2)}|
-|${" ".repeat(cellLen+2)}|
-${lines.join("")}|${" ".repeat(cellLen+2)}|
-|${"_".repeat(cellLen+2)}|
-${bunleft}(\\__/)||
-${bunleft}(•ㅅ•)||
-${bunleft}/ 　 づ
-  `}
+┌${"─".repeat(cellLen+2)}┐
+│${" ".repeat(cellLen+2)}│
+${lines.join("")}│${" ".repeat(cellLen+2)}│
+└${"─".repeat(cellLen/2)}┬┬${"─".repeat(cellLen/2)}─┘
+${bunleft}(\\__/)││
+${bunleft}(•ㅅ•)││
+${bunleft}/ 　  づ
+`}
 }
 
 function signBunny (str) {

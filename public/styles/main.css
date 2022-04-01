@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
+@font-face {
+  font-family: 'Fira Code';
+  src: url('fonts/FiraCode-Regular.ttf');
+  src: url('fonts/FiraCode-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 html {
   background: black;
@@ -126,7 +132,7 @@ body {
 
 #signBunny {
   font-size: 24px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', 'Nanum Gothic Coding', monospace;
 }
 
 .signBunny {
