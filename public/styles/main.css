@@ -169,6 +169,7 @@ textarea {
   border: 1px solid blue;
   background: rgba(0,0,0,0.7);
   padding: 0.5em;
+  box-sizing: border-box
 }
 
 #signText {
