@@ -3,25 +3,27 @@ function signBunny_ (strArr, cellLen) {
     let rem = cellLen - str.length
     let lspace = ~~(rem / 2)
     let rspace = cellLen - (lspace + str.length)
-    return "│" + " ".repeat(lspace+1) + str + " ".repeat(rspace+1) + "│\n"
+    return "│" + " ".repeat(lspace) + str + " ".repeat(rspace) + "│\n"
   })
   let bunLen = 8
-  let bunleft = " ".repeat(~~((cellLen - bunLen) / 2) -1)
+  let bunleft = " ".repeat(Math.max(~~((cellLen - bunLen) / 2) -2, 0))
+  let rem = cellLen - 2
+  let lspace = ~~(rem / 2)
+  let rspace = cellLen - (lspace + 2)
   if (cellLen < 11) {
     return "minimum bunny width is 11"
   } else { return `
-┌${"─".repeat(cellLen+2)}┐
-│${" ".repeat(cellLen+2)}│
-${lines.join("")}│${" ".repeat(cellLen+2)}│
-└${"─".repeat(cellLen/2)}┬┬${"─".repeat(cellLen/2)}─┘
+┌${"─".repeat(cellLen)}┐
+│${" ".repeat(cellLen)}│
+${lines.join("")}│${" ".repeat(cellLen)}│
+└${"─".repeat(lspace)}┬┬${"─".repeat(rspace-1)}─┘
 ${bunleft}(\\__/)││
 ${bunleft}(•ㅅ•)││
 ${bunleft}/ 　  づ
 `}
 }
 
-function signBunny (str) {
-  let cellLen = 15
+function signBunny (str, cellLen) {
   return signBunny_(wordWrap(str.trim(), cellLen), cellLen)
 }
 
