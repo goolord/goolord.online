@@ -15,7 +15,8 @@ function signBunny_ (strArr, cellLen) {
   } else { return `
 ┌${"─".repeat(cellLen)}┐
 │${" ".repeat(cellLen)}│
-${lines.join("")}│${" ".repeat(cellLen)}│
+${lines.join("")}\
+│${" ".repeat(cellLen)}│
 └${"─".repeat(lspace)}┬┬${"─".repeat(rspace-1)}─┘
 ${bunleft}(\\__/)││
 ${bunleft}(•ㅅ•)││
@@ -39,7 +40,7 @@ function autoPlay() {
     }).then(() => {
       playing = true;
       // playback has begun
-      console.log(signBunny("hey bro"));
+      console.log(signBunny("hey bro", 15));
     });
   }
 }
